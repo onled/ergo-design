@@ -1,0 +1,106 @@
+/*
+ * Primitivos: valores crus, sem intenção.
+ *
+ * Nenhum componente usa esta camada diretamente. Ela existe para alimentar os
+ * tokens semânticos (semantic.css), que são o que o código consome. Trocar uma
+ * cor aqui muda a paleta; trocar o que "superfície" significa é lá.
+ *
+ * Tudo é declarado em .ergo, não em :root. O pacote roda dentro do admin do
+ * Covalente, e variável em :root vaza para a página hospedeira.
+ *
+ * Medidas em px, não em rem: o host pode mudar o font-size do <html>, e o
+ * editor não deve encolher junto com a tabela de outra tela.
+ */
+.ergo {
+  /* Neutros */
+  --ergo-neutral-0: #ffffff;
+  --ergo-neutral-50: #f8f9fb;
+  --ergo-neutral-100: #f1f3f6;
+  --ergo-neutral-200: #e3e7ed;
+  --ergo-neutral-300: #cdd3dc;
+  --ergo-neutral-400: #9aa3b1;
+  --ergo-neutral-500: #6b7483;
+  --ergo-neutral-600: #4d5563;
+  --ergo-neutral-700: #363c47;
+  --ergo-neutral-800: #23272f;
+  --ergo-neutral-900: #16191e;
+  --ergo-neutral-950: #0d0f12;
+
+  /* Acento */
+  --ergo-blue-50: #eef4ff;
+  --ergo-blue-100: #d9e6ff;
+  --ergo-blue-300: #8fb3ff;
+  --ergo-blue-400: #5e8ff7;
+  --ergo-blue-500: #3a6fe8;
+  --ergo-blue-600: #2855c9;
+  --ergo-blue-700: #1f43a0;
+  --ergo-blue-900: #14265a;
+
+  /* Estados */
+  --ergo-red-50: #fdf0f0;
+  --ergo-red-400: #ef7272;
+  --ergo-red-600: #c93636;
+  --ergo-red-900: #4a1717;
+  --ergo-amber-50: #fdf6e7;
+  --ergo-amber-400: #f0b43c;
+  --ergo-amber-600: #b07808;
+  --ergo-amber-900: #43300a;
+  --ergo-green-50: #ecf8f0;
+  --ergo-green-400: #4fc27d;
+  --ergo-green-600: #218a4d;
+  --ergo-green-900: #0f3a21;
+
+  /* Espaço: grade de 4px */
+  --ergo-space-0: 0;
+  --ergo-space-px: 1px;
+  --ergo-space-0-5: 2px;
+  --ergo-space-1: 4px;
+  --ergo-space-1-5: 6px;
+  --ergo-space-2: 8px;
+  --ergo-space-3: 12px;
+  --ergo-space-4: 16px;
+  --ergo-space-5: 20px;
+  --ergo-space-6: 24px;
+  --ergo-space-8: 32px;
+  --ergo-space-10: 40px;
+  --ergo-space-12: 48px;
+
+  /* Tipografia */
+  --ergo-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ergo-font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --ergo-font-size-2xs: 10px;
+  --ergo-font-size-xs: 11px;
+  --ergo-font-size-sm: 12px;
+  --ergo-font-size-md: 13px;
+  --ergo-font-size-lg: 15px;
+  --ergo-font-size-xl: 18px;
+
+  --ergo-font-weight-regular: 400;
+  --ergo-font-weight-medium: 500;
+  --ergo-font-weight-semibold: 600;
+
+  --ergo-line-height-tight: 1.25;
+  --ergo-line-height-normal: 1.45;
+
+  --ergo-letter-spacing-caps: 0.06em;
+
+  /* Forma */
+  --ergo-radius-sm: 3px;
+  --ergo-radius-md: 5px;
+  --ergo-radius-lg: 8px;
+  --ergo-radius-full: 9999px;
+
+  --ergo-border-width: 1px;
+
+  /* Movimento */
+  --ergo-duration-fast: 90ms;
+  --ergo-duration-normal: 160ms;
+  --ergo-easing: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Empilhamento, relativo ao próprio editor */
+  --ergo-z-sticky: 10;
+  --ergo-z-overlay: 20;
+  --ergo-z-popover: 30;
+  --ergo-z-toast: 40;
+}

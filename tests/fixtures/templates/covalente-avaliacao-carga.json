@@ -1,0 +1,1184 @@
+{
+    "version": "v1",
+    "unit": "mm",
+    "page": {
+        "widthMm": 210,
+        "heightMm": 297,
+        "margin": {
+            "topMm": 15,
+            "rightMm": 15,
+            "bottomMm": 15,
+            "leftMm": 15
+        }
+    },
+    "sections": {
+        "content": {
+            "components": [
+                {
+                    "type": "text",
+                    "styleRef": "s1",
+                    "text": {
+                        "value": "RELATÓRIO DE AVALIAÇÃO DE CARGA"
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Fornecedor: "
+                                                },
+                                                {
+                                                    "bind": "dados.fornecedor"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Municipio: "
+                                                },
+                                                {
+                                                    "bind": "dados.municipio"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Nº Chegada: "
+                                                },
+                                                {
+                                                    "bind": "dados.numero_chegada"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Data Chegada: "
+                                                },
+                                                {
+                                                    "bind": "dados.data_chegada"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Romaneio: "
+                                                },
+                                                {
+                                                    "bind": "dados.numero_romaneio"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Motorista: "
+                                                },
+                                                {
+                                                    "bind": "dados.motorista"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Placa do Veículo: "
+                                                },
+                                                {
+                                                    "bind": "dados.placa_veiculo"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Tipo Veículo: "
+                                                },
+                                                {
+                                                    "bind": "dados.tipo_veiculo"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Nota Fiscal: "
+                                                },
+                                                {
+                                                    "bind": "dados.nota_fiscal"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Guia Florestal: "
+                                                },
+                                                {
+                                                    "bind": "dados.guia_florestal"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "table",
+                    "table": {
+                        "dataPath": "dados.especies",
+                        "repeatHeader": true,
+                        "columns": [
+                            {
+                                "key": "especie",
+                                "title": "Espécie",
+                                "widthMm": 80
+                            },
+                            {
+                                "key": "quantidade_fardos",
+                                "title": "Fardos",
+                                "widthMm": 40
+                            },
+                            {
+                                "key": "volume",
+                                "title": "M³",
+                                "widthMm": 40
+                            }
+                        ],
+                        "row": {
+                            "cells": [
+                                {
+                                    "bind": "especie",
+                                    "styleRef": "s4"
+                                },
+                                {
+                                    "bind": "quantidade_fardos",
+                                    "styleRef": "s4"
+                                },
+                                {
+                                    "bind": "volume",
+                                    "styleRef": "s4"
+                                }
+                            ]
+                        },
+                        "header": {
+                            "cells": [
+                                {
+                                    "value": "Espécie",
+                                    "styleRef": "s3"
+                                },
+                                {
+                                    "value": "Fardos",
+                                    "styleRef": "s3"
+                                },
+                                {
+                                    "value": "M³",
+                                    "styleRef": "s3"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 1
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "text",
+                    "styleRef": "s5",
+                    "text": {
+                        "value": "Avaliação da Carga"
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Enlonada: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.enlonada"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Lavada: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.lavada"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Cabo Aço: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.cabo_aco"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Cordas: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.cordas"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Cantoneira: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.cantoneira"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Fardos Estourados: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.fardos_estourados"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Média: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_carga.media"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "text",
+                    "styleRef": "s5",
+                    "text": {
+                        "value": "Avaliação da Serragem"
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Larguras: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_serragem.larguras"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Espessuras: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_serragem.espessuras"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Qualidade: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_serragem.qualidade"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Média: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_serragem.media"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "text",
+                    "styleRef": "s5",
+                    "text": {
+                        "value": "Avaliação do Enfardamento"
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Comprimento: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.comprimento"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Larguras: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.larguras"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Travessas: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.travessas"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Amarração Externa: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.amarracao_externa"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Documentação: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.documentacao"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Conferência: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.conferencia"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Média: "
+                                                },
+                                                {
+                                                    "bind": "dados.avaliacao_enfardamento.media"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "text",
+                    "styleRef": "s1",
+                    "text": {
+                        "value": "CLASSIFICAÇÕES"
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "repeat",
+                    "repeat": {
+                        "dataPath": "itens",
+                        "separatorMm": 4,
+                        "components": [
+                            {
+                                "type": "text",
+                                "styleRef": "s6",
+                                "text": {
+                                    "parts": [
+                                        {
+                                            "bind": "especie"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "spacer",
+                                "spacer": {
+                                    "heightMm": 4
+                                }
+                            },
+                            {
+                                "type": "row",
+                                "row": {
+                                    "gapMm": 0,
+                                    "columns": [
+                                        {
+                                            "weight": 1,
+                                            "styleRef": "s2",
+                                            "components": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "parts": [
+                                                            {
+                                                                "value": "Esp.: "
+                                                            },
+                                                            {
+                                                                "bind": "espessura"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "styleRef": "s2",
+                                            "components": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "parts": [
+                                                            {
+                                                                "value": "Larg.: "
+                                                            },
+                                                            {
+                                                                "bind": "largura"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "styleRef": "s2",
+                                            "components": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "parts": [
+                                                            {
+                                                                "value": "Com.: "
+                                                            },
+                                                            {
+                                                                "bind": "comprimento"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "row",
+                                "row": {
+                                    "gapMm": 0,
+                                    "columns": [
+                                        {
+                                            "weight": 1,
+                                            "styleRef": "s2",
+                                            "components": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "parts": [
+                                                            {
+                                                                "value": "Qtd: "
+                                                            },
+                                                            {
+                                                                "bind": "quantidade"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "styleRef": "s2",
+                                            "components": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "parts": [
+                                                            {
+                                                                "value": "Vol.: "
+                                                            },
+                                                            {
+                                                                "bind": "volume"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "styleRef": "s2",
+                                            "components": [
+                                                {
+                                                    "type": "text",
+                                                    "text": {
+                                                        "parts": [
+                                                            {
+                                                                "value": "Perda: "
+                                                            },
+                                                            {
+                                                                "bind": "percentual_perda"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "spacer",
+                                "spacer": {
+                                    "heightMm": 4
+                                }
+                            },
+                            {
+                                "type": "table",
+                                "table": {
+                                    "dataPath": "amostras",
+                                    "repeatHeader": true,
+                                    "columns": [
+                                        {
+                                            "key": "espessura",
+                                            "title": "Esp.",
+                                            "widthMm": 15
+                                        },
+                                        {
+                                            "key": "largura",
+                                            "title": "Larg.",
+                                            "widthMm": 15
+                                        },
+                                        {
+                                            "key": "comprimento",
+                                            "title": "Com.",
+                                            "widthMm": 15
+                                        },
+                                        {
+                                            "key": "quantidade",
+                                            "title": "Qtd",
+                                            "widthMm": 15
+                                        },
+                                        {
+                                            "key": "volume",
+                                            "title": "Vol.",
+                                            "widthMm": 20
+                                        }
+                                    ],
+                                    "row": {
+                                        "cells": [
+                                            {
+                                                "bind": "espessura",
+                                                "styleRef": "s4"
+                                            },
+                                            {
+                                                "bind": "largura",
+                                                "styleRef": "s4"
+                                            },
+                                            {
+                                                "bind": "comprimento",
+                                                "styleRef": "s4"
+                                            },
+                                            {
+                                                "bind": "quantidade",
+                                                "styleRef": "s4"
+                                            },
+                                            {
+                                                "bind": "volume",
+                                                "styleRef": "s4"
+                                            }
+                                        ]
+                                    },
+                                    "header": {
+                                        "cells": [
+                                            {
+                                                "value": "Esp.",
+                                                "styleRef": "s3"
+                                            },
+                                            {
+                                                "value": "Larg.",
+                                                "styleRef": "s3"
+                                            },
+                                            {
+                                                "value": "Com.",
+                                                "styleRef": "s3"
+                                            },
+                                            {
+                                                "value": "Qtd",
+                                                "styleRef": "s3"
+                                            },
+                                            {
+                                                "value": "Vol.",
+                                                "styleRef": "s3"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "type": "spacer",
+                                "spacer": {
+                                    "heightMm": 4
+                                }
+                            },
+                            {
+                                "type": "line",
+                                "line": {
+                                    "thicknessMm": 0.3
+                                }
+                            },
+                            {
+                                "type": "spacer",
+                                "spacer": {
+                                    "heightMm": 4
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                },
+                {
+                    "type": "text",
+                    "styleRef": "s5",
+                    "text": {
+                        "value": "Observações"
+                    }
+                },
+                {
+                    "type": "row",
+                    "row": {
+                        "gapMm": 0,
+                        "columns": [
+                            {
+                                "weight": 1,
+                                "styleRef": "s2",
+                                "components": [
+                                    {
+                                        "type": "text",
+                                        "text": {
+                                            "parts": [
+                                                {
+                                                    "value": "Observação: "
+                                                },
+                                                {
+                                                    "bind": "dados.observacao"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "spacer",
+                    "spacer": {
+                        "heightMm": 4
+                    }
+                }
+            ]
+        }
+    },
+    "styles": {
+        "s1": {
+            "fontWeight": "bold",
+            "fontSizePt": 14,
+            "padding": {
+                "topMm": 1.5,
+                "rightMm": 2,
+                "bottomMm": 1.5,
+                "leftMm": 2
+            }
+        },
+        "s2": {
+            "fontSizePt": 9,
+            "verticalAlign": "top",
+            "border": {
+                "widthMm": 0.3
+            },
+            "padding": {
+                "topMm": 1.5,
+                "rightMm": 2,
+                "bottomMm": 1.5,
+                "leftMm": 2
+            },
+            "minHeightMm": 6
+        },
+        "s3": {
+            "fontSizePt": 9,
+            "fontWeight": "bold",
+            "align": "left",
+            "verticalAlign": "middle",
+            "border": {
+                "widthMm": 0.3
+            },
+            "padding": {
+                "topMm": 1.5,
+                "rightMm": 2,
+                "bottomMm": 1.5,
+                "leftMm": 2
+            }
+        },
+        "s4": {
+            "fontSizePt": 9,
+            "align": "left",
+            "verticalAlign": "middle",
+            "border": {
+                "widthMm": 0.3
+            },
+            "padding": {
+                "topMm": 1.5,
+                "rightMm": 2,
+                "bottomMm": 1.5,
+                "leftMm": 2
+            }
+        },
+        "s5": {
+            "fontSizePt": 9,
+            "padding": {
+                "topMm": 1.5,
+                "rightMm": 2,
+                "bottomMm": 1.5,
+                "leftMm": 2
+            },
+            "minHeightMm": 6
+        },
+        "s6": {
+            "fontWeight": "bold",
+            "fontSizePt": 10,
+            "padding": {
+                "topMm": 1.5,
+                "rightMm": 2,
+                "bottomMm": 1.5,
+                "leftMm": 2
+            }
+        }
+    }
+}

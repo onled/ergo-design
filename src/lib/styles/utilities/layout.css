@@ -1,0 +1,52 @@
+/*
+ * Utilitários de layout.
+ *
+ * Prefixo e- em tudo: o admin do Covalente usa Tailwind, e `.flex` do editor
+ * não pode colidir com `.flex` do host. `:where(.ergo, .ergo *)` restringe o
+ * alcance ao editor — a raiz inclusive — sem somar especificidade: cada
+ * utilitário pesa uma classe, como no Tailwind.
+ *
+ * Utilitário é para composição de tela (quem fica ao lado de quem). Visual de
+ * componente — estados, variantes — mora no <style scoped> do componente.
+ */
+.e-block:where(.ergo, .ergo *) { display: block; }
+.e-inline-flex:where(.ergo, .ergo *) { display: inline-flex; }
+.e-hidden:where(.ergo, .ergo *) { display: none; }
+
+.e-flex:where(.ergo, .ergo *) { display: flex; }
+.e-row:where(.ergo, .ergo *) { display: flex; flex-direction: row; }
+.e-col:where(.ergo, .ergo *) { display: flex; flex-direction: column; }
+.e-wrap:where(.ergo, .ergo *) { flex-wrap: wrap; }
+
+.e-grow:where(.ergo, .ergo *) { flex: 1 1 0%; }
+.e-shrink-0:where(.ergo, .ergo *) { flex-shrink: 0; }
+.e-min-w-0:where(.ergo, .ergo *) { min-width: 0; }
+.e-min-h-0:where(.ergo, .ergo *) { min-height: 0; }
+
+.e-items-start:where(.ergo, .ergo *) { align-items: flex-start; }
+.e-items-center:where(.ergo, .ergo *) { align-items: center; }
+.e-items-end:where(.ergo, .ergo *) { align-items: flex-end; }
+.e-items-stretch:where(.ergo, .ergo *) { align-items: stretch; }
+
+.e-justify-start:where(.ergo, .ergo *) { justify-content: flex-start; }
+.e-justify-center:where(.ergo, .ergo *) { justify-content: center; }
+.e-justify-end:where(.ergo, .ergo *) { justify-content: flex-end; }
+.e-justify-between:where(.ergo, .ergo *) { justify-content: space-between; }
+
+.e-gap-0-5:where(.ergo, .ergo *) { gap: var(--ergo-space-0-5); }
+.e-gap-1:where(.ergo, .ergo *) { gap: var(--ergo-space-1); }
+.e-gap-2:where(.ergo, .ergo *) { gap: var(--ergo-space-2); }
+.e-gap-3:where(.ergo, .ergo *) { gap: var(--ergo-space-3); }
+.e-gap-4:where(.ergo, .ergo *) { gap: var(--ergo-space-4); }
+.e-gap-6:where(.ergo, .ergo *) { gap: var(--ergo-space-6); }
+
+.e-w-full:where(.ergo, .ergo *) { width: 100%; }
+.e-h-full:where(.ergo, .ergo *) { height: 100%; }
+
+.e-relative:where(.ergo, .ergo *) { position: relative; }
+.e-absolute:where(.ergo, .ergo *) { position: absolute; }
+.e-sticky-top:where(.ergo, .ergo *) { position: sticky; top: 0; z-index: var(--ergo-z-sticky); }
+
+.e-overflow-hidden:where(.ergo, .ergo *) { overflow: hidden; }
+.e-overflow-auto:where(.ergo, .ergo *) { overflow: auto; }
+.e-scroll-y:where(.ergo, .ergo *) { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }

@@ -1,0 +1,149 @@
+/*
+ * Tokens semânticos: o que os componentes consomem.
+ *
+ * O nome diz o papel, não a cor. `--ergo-color-surface` é "fundo de painel" em
+ * qualquer tema; o valor é que muda. É também a superfície de customização do
+ * pacote: quem instala sobrescreve estes nomes (via config `tokens`), nunca os
+ * primitivos.
+ *
+ * O tema vem do atributo data-ergo-theme no elemento raiz: light, dark ou auto
+ * (segue o sistema). O bloco escuro aparece duas vezes porque CSS não tem como
+ * combinar atributo e media query num seletor só.
+ */
+.ergo {
+  color-scheme: light;
+
+  /* Fundo e superfícies */
+  --ergo-color-bg: var(--ergo-neutral-100);
+  --ergo-color-surface: var(--ergo-neutral-0);
+  --ergo-color-surface-sunken: var(--ergo-neutral-50);
+  --ergo-color-surface-hover: var(--ergo-neutral-100);
+  --ergo-color-surface-active: var(--ergo-neutral-200);
+
+  /* Texto */
+  --ergo-color-text: var(--ergo-neutral-900);
+  --ergo-color-text-muted: var(--ergo-neutral-500);
+  --ergo-color-text-subtle: var(--ergo-neutral-400);
+  --ergo-color-text-inverse: var(--ergo-neutral-0);
+
+  /* Bordas */
+  --ergo-color-border: var(--ergo-neutral-200);
+  --ergo-color-border-strong: var(--ergo-neutral-300);
+
+  /* Acento: seleção, ação primária, foco */
+  --ergo-color-accent: var(--ergo-blue-500);
+  --ergo-color-accent-hover: var(--ergo-blue-600);
+  --ergo-color-accent-text: var(--ergo-blue-700);
+  --ergo-color-accent-soft: var(--ergo-blue-50);
+  --ergo-color-accent-contrast: var(--ergo-neutral-0);
+  --ergo-color-focus-ring: var(--ergo-blue-400);
+
+  /* Estados */
+  --ergo-color-danger: var(--ergo-red-600);
+  --ergo-color-danger-soft: var(--ergo-red-50);
+  --ergo-color-warning: var(--ergo-amber-600);
+  --ergo-color-warning-soft: var(--ergo-amber-50);
+  --ergo-color-success: var(--ergo-green-600);
+  --ergo-color-success-soft: var(--ergo-green-50);
+
+  /* Área de preview: o papel é sempre branco, o entorno acompanha o tema */
+  --ergo-color-canvas: var(--ergo-neutral-200);
+  --ergo-color-paper: #ffffff;
+
+  /* Sombras */
+  --ergo-shadow-sm: 0 1px 2px rgb(13 15 18 / 0.06);
+  --ergo-shadow-md: 0 2px 8px rgb(13 15 18 / 0.08), 0 1px 2px rgb(13 15 18 / 0.06);
+  --ergo-shadow-lg: 0 8px 24px rgb(13 15 18 / 0.12), 0 2px 6px rgb(13 15 18 / 0.08);
+  --ergo-shadow-paper: 0 1px 3px rgb(13 15 18 / 0.12), 0 6px 20px rgb(13 15 18 / 0.1);
+
+  /* Papéis tipográficos */
+  --ergo-text-body: var(--ergo-font-size-md);
+  --ergo-text-label: var(--ergo-font-size-sm);
+  --ergo-text-caption: var(--ergo-font-size-xs);
+  --ergo-text-title: var(--ergo-font-size-lg);
+
+  /* Dimensões do shell */
+  --ergo-toolbar-height: 44px;
+  --ergo-panel-width: 280px;
+  --ergo-control-height: 28px;
+}
+
+.ergo[data-ergo-theme='dark'] {
+  color-scheme: dark;
+
+  --ergo-color-bg: var(--ergo-neutral-950);
+  --ergo-color-surface: var(--ergo-neutral-900);
+  --ergo-color-surface-sunken: var(--ergo-neutral-950);
+  --ergo-color-surface-hover: var(--ergo-neutral-800);
+  --ergo-color-surface-active: var(--ergo-neutral-700);
+
+  --ergo-color-text: var(--ergo-neutral-100);
+  --ergo-color-text-muted: var(--ergo-neutral-400);
+  --ergo-color-text-subtle: var(--ergo-neutral-500);
+  --ergo-color-text-inverse: var(--ergo-neutral-900);
+
+  --ergo-color-border: var(--ergo-neutral-800);
+  --ergo-color-border-strong: var(--ergo-neutral-700);
+
+  --ergo-color-accent: var(--ergo-blue-400);
+  --ergo-color-accent-hover: var(--ergo-blue-300);
+  --ergo-color-accent-text: var(--ergo-blue-300);
+  --ergo-color-accent-soft: var(--ergo-blue-900);
+  --ergo-color-accent-contrast: var(--ergo-neutral-950);
+  --ergo-color-focus-ring: var(--ergo-blue-400);
+
+  --ergo-color-danger: var(--ergo-red-400);
+  --ergo-color-danger-soft: var(--ergo-red-900);
+  --ergo-color-warning: var(--ergo-amber-400);
+  --ergo-color-warning-soft: var(--ergo-amber-900);
+  --ergo-color-success: var(--ergo-green-400);
+  --ergo-color-success-soft: var(--ergo-green-900);
+
+  --ergo-color-canvas: var(--ergo-neutral-800);
+
+  --ergo-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ergo-shadow-md: 0 2px 8px rgb(0 0 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.4);
+  --ergo-shadow-lg: 0 8px 24px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.4);
+  --ergo-shadow-paper: 0 1px 3px rgb(0 0 0 / 0.5), 0 6px 20px rgb(0 0 0 / 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  .ergo[data-ergo-theme='auto'] {
+    color-scheme: dark;
+
+    --ergo-color-bg: var(--ergo-neutral-950);
+    --ergo-color-surface: var(--ergo-neutral-900);
+    --ergo-color-surface-sunken: var(--ergo-neutral-950);
+    --ergo-color-surface-hover: var(--ergo-neutral-800);
+    --ergo-color-surface-active: var(--ergo-neutral-700);
+
+    --ergo-color-text: var(--ergo-neutral-100);
+    --ergo-color-text-muted: var(--ergo-neutral-400);
+    --ergo-color-text-subtle: var(--ergo-neutral-500);
+    --ergo-color-text-inverse: var(--ergo-neutral-900);
+
+    --ergo-color-border: var(--ergo-neutral-800);
+    --ergo-color-border-strong: var(--ergo-neutral-700);
+
+    --ergo-color-accent: var(--ergo-blue-400);
+    --ergo-color-accent-hover: var(--ergo-blue-300);
+    --ergo-color-accent-text: var(--ergo-blue-300);
+    --ergo-color-accent-soft: var(--ergo-blue-900);
+    --ergo-color-accent-contrast: var(--ergo-neutral-950);
+    --ergo-color-focus-ring: var(--ergo-blue-400);
+
+    --ergo-color-danger: var(--ergo-red-400);
+    --ergo-color-danger-soft: var(--ergo-red-900);
+    --ergo-color-warning: var(--ergo-amber-400);
+    --ergo-color-warning-soft: var(--ergo-amber-900);
+    --ergo-color-success: var(--ergo-green-400);
+    --ergo-color-success-soft: var(--ergo-green-900);
+
+    --ergo-color-canvas: var(--ergo-neutral-800);
+
+    --ergo-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+    --ergo-shadow-md: 0 2px 8px rgb(0 0 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.4);
+    --ergo-shadow-lg: 0 8px 24px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.4);
+    --ergo-shadow-paper: 0 1px 3px rgb(0 0 0 / 0.5), 0 6px 20px rgb(0 0 0 / 0.4);
+  }
+}

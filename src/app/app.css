@@ -1,0 +1,7 @@
+/* Só o que é do site: o editor ocupa a janela inteira. */
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}

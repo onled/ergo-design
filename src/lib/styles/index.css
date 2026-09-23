@@ -1,0 +1,20 @@
+/*
+ * Ponto de entrada dos estilos do pacote. A ordem é a cascata:
+ *
+ *   tokens/primitives   valores crus (paleta, escala, tipografia)
+ *   tokens/semantic     papéis que os componentes consomem, com temas
+ *   base                reset restrito a .ergo
+ *   utilities/*         composição de tela, prefixo e-
+ *   controls            botão, campo e rótulo compartilhados pelos painéis
+ *
+ * Os estilos de componente vêm depois, do <style scoped> de cada .vue, e o
+ * build junta tudo em dist/style.css.
+ */
+@import './tokens/primitives.css';
+@import './tokens/semantic.css';
+@import './base.css';
+@import './utilities/layout.css';
+@import './utilities/spacing.css';
+@import './utilities/typography.css';
+@import './utilities/surface.css';
+@import './controls/controls.css';

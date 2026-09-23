@@ -1,0 +1,425 @@
+{
+  "version": "v1",
+  "unit": "mm",
+  "page": {
+    "widthMm": 210,
+    "heightMm": 297,
+    "margin": {
+      "topMm": 8,
+      "rightMm": 10,
+      "bottomMm": 10,
+      "leftMm": 10
+    }
+  },
+  "styles": {
+    "texto": {
+      "fontSizePt": 9
+    },
+    "titulo": {
+      "fontSizePt": 16,
+      "fontWeight": "bold",
+      "margin": {
+        "bottomMm": 1
+      }
+    },
+    "subtitulo": {
+      "fontSizePt": 11,
+      "color": "#333333",
+      "margin": {
+        "bottomMm": 3
+      }
+    },
+    "rotulo": {
+      "fontSizePt": 8,
+      "fontWeight": "bold"
+    },
+    "cabecalho-tabela": {
+      "fontSizePt": 8,
+      "fontWeight": "bold",
+      "verticalAlign": "bottom",
+      "padding": {
+        "topMm": 1,
+        "rightMm": 1.2,
+        "bottomMm": 1,
+        "leftMm": 1.2
+      },
+      "border": {
+        "widthMm": 0.3,
+        "color": "#999999",
+        "sides": "b"
+      }
+    },
+    "celula": {
+      "fontSizePt": 8,
+      "verticalAlign": "middle",
+      "padding": {
+        "topMm": 1,
+        "rightMm": 1.2,
+        "bottomMm": 1,
+        "leftMm": 1.2
+      },
+      "border": {
+        "widthMm": 0.2,
+        "color": "#cccccc",
+        "sides": "b"
+      }
+    },
+    "direita": {
+      "align": "right"
+    },
+    "centro": {
+      "align": "center"
+    },
+    "rodape": {
+      "fontSizePt": 7,
+      "color": "#555555"
+    },
+    "titulo-2": {
+      "fontSizePt": 16,
+      "fontWeight": "bold",
+      "margin": {
+        "bottomMm": 1
+      },
+      "border": {
+        "widthMm": 0.3,
+        "sides": "t"
+      },
+      "padding": {
+        "topMm": 1.5
+      }
+    }
+  },
+  "sections": {
+    "content": {
+      "components": [
+        {
+          "type": "table",
+          "table": {
+            "dataPath": "data",
+            "header": {
+              "styleRef": "cabecalho-tabela"
+            },
+            "columns": [
+              {
+                "key": "cidadao_prontuario",
+                "title": "Matrícula",
+                "styleRef": "celula",
+                "widthMm": 24
+              },
+              {
+                "key": "cidadao_nome",
+                "title": "Cidadão",
+                "weight": 1,
+                "styleRef": "celula"
+              },
+              {
+                "key": "cidadao_cns",
+                "title": "CNS",
+                "styleRef": "celula",
+                "widthMm": 40
+              },
+              {
+                "key": "consultas",
+                "title": "1ª Consultas",
+                "styleRef": "celula direita",
+                "widthMm": 26
+              },
+              {
+                "key": "status_nome",
+                "title": "Status",
+                "styleRef": "celula direita",
+                "widthMm": 26,
+                "format": {
+                  "transform": "upper"
+                }
+              }
+            ],
+            "emptyMessage": "Nenhum cidadão nesta captação.",
+            "detail": {
+              "components": [
+                {
+                  "type": "text",
+                  "bind": "observacoes[0]",
+                  "text": {},
+                  "styleRef": "celula"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "pageHeader": {
+      "components": [
+        {
+          "type": "text",
+          "styleRef": "rodape direita",
+          "bind": "@report.generatedAt",
+          "format": {
+            "type": "datetime",
+            "pattern": "EEEE, dd 'de' MMMM 'de' yyyy HH:mm"
+          },
+          "text": {}
+        }
+      ]
+    },
+    "reportHeader": {
+      "components": [
+        {
+          "type": "text",
+          "bind": "header.cliente_nome",
+          "text": {},
+          "styleRef": "titulo"
+        },
+        {
+          "type": "text",
+          "bind": "header.quadrimestre_nome",
+          "text": {},
+          "styleRef": "subtitulo"
+        },
+        {
+          "type": "text",
+          "text": {
+            "parts": [
+              {
+                "bind": "header.indicador_codigo"
+              },
+              {
+                "value": " - "
+              },
+              {
+                "bind": "header.indicador_nome"
+              }
+            ]
+          },
+          "styleRef": "titulo-2"
+        },
+        {
+          "type": "text",
+          "text": {
+            "parts": [
+              {
+                "value": "Equipe: "
+              },
+              {
+                "bind": "data[0].equipe_nome"
+              }
+            ]
+          },
+          "styleRef": "rotulo"
+        },
+        {
+          "type": "text",
+          "text": {
+            "parts": [
+              {
+                "value": "INE: "
+              },
+              {
+                "bind": "data[0].equipe_ine"
+              }
+            ]
+          },
+          "styleRef": "rotulo"
+        }
+      ]
+    },
+    "summary": {
+      "components": [
+        {
+          "type": "spacer",
+          "spacer": {
+            "heightMm": 6
+          }
+        },
+        {
+          "type": "row",
+          "row": {
+            "columns": [
+              {
+                "widthMm": 32,
+                "components": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "value": "Atingíveis:"
+                    },
+                    "styleRef": "texto"
+                  }
+                ]
+              },
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "texto",
+                    "text": {},
+                    "bind": "sumario.atingiveis",
+                    "format": {
+                      "type": "number"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "row",
+          "row": {
+            "columns": [
+              {
+                "widthMm": 32,
+                "components": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "value": "Considerados:"
+                    },
+                    "styleRef": "texto"
+                  }
+                ]
+              },
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "texto",
+                    "text": {},
+                    "bind": "sumario.considerados",
+                    "format": {
+                      "type": "number"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "row",
+          "row": {
+            "columns": [
+              {
+                "widthMm": 32,
+                "components": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "value": "Desconsiderados:"
+                    },
+                    "styleRef": "texto"
+                  }
+                ]
+              },
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "texto",
+                    "text": {},
+                    "bind": "sumario.desconsiderados",
+                    "format": {
+                      "type": "number"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "row",
+          "row": {
+            "columns": [
+              {
+                "widthMm": 32,
+                "components": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "value": "Total:"
+                    },
+                    "styleRef": "texto"
+                  }
+                ]
+              },
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "texto",
+                    "text": {},
+                    "bind": "sumario.total",
+                    "format": {
+                      "type": "number"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "pageFooter": {
+      "components": [
+        {
+          "type": "row",
+          "row": {
+            "columns": [
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "rodape",
+                    "text": {
+                      "parts": [
+                        {
+                          "value": "Impresso por: "
+                        },
+                        {
+                          "bind": "metadados.usuario"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "rodape direita",
+                    "text": {
+                      "parts": [
+                        {
+                          "value": "Página "
+                        },
+                        {
+                          "bind": "@page.number"
+                        },
+                        {
+                          "value": " de "
+                        },
+                        {
+                          "bind": "@page.total"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

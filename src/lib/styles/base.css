@@ -1,0 +1,91 @@
+/*
+ * Base: reset mínimo, só dentro do editor.
+ *
+ * O host (admin do Covalente) traz o preflight do Tailwind e o tema do
+ * PrimeVue. Este arquivo não depende de nenhum dos dois e não toca nada fora
+ * de .ergo. Os seletores usam :where() para ficar com especificidade de
+ * elemento: qualquer utilitário ou estilo de componente vence o reset sem
+ * precisar de !important.
+ *
+ * Nada aqui usa @layer. O Tailwind declara as camadas dele primeiro, e estilo
+ * em camada perde para estilo fora de camada — o preflight do host venceria o
+ * reset do editor se este estivesse numa camada.
+ */
+.ergo {
+  box-sizing: border-box;
+  font-family: var(--ergo-font-sans);
+  font-size: var(--ergo-text-body);
+  line-height: var(--ergo-line-height-normal);
+  color: var(--ergo-color-text);
+  background: var(--ergo-color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:where(.ergo) *,
+:where(.ergo) *::before,
+:where(.ergo) *::after {
+  box-sizing: inherit;
+}
+
+:where(.ergo) :is(h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol) {
+  margin: 0;
+}
+
+:where(.ergo) :is(h1, h2, h3, h4, h5, h6) {
+  font-size: inherit;
+  font-weight: var(--ergo-font-weight-semibold);
+  line-height: var(--ergo-line-height-tight);
+}
+
+:where(.ergo) :is(ul, ol) {
+  padding: 0;
+  list-style: none;
+}
+
+:where(.ergo) :is(button, input, select, textarea) {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+:where(.ergo) button {
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+:where(.ergo) :is(button, [role='button']):disabled {
+  cursor: not-allowed;
+}
+
+:where(.ergo) :is(img, svg, canvas, iframe) {
+  display: block;
+  max-width: 100%;
+}
+
+:where(.ergo) :is(code, kbd, pre, samp) {
+  font-family: var(--ergo-font-mono);
+  font-size: 0.95em;
+}
+
+:where(.ergo) :focus-visible {
+  outline: 2px solid var(--ergo-color-focus-ring);
+  outline-offset: 1px;
+}
+
+:where(.ergo) ::selection {
+  background: var(--ergo-color-accent-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ergo) *,
+  :where(.ergo) *::before,
+  :where(.ergo) *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}

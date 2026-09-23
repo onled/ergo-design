@@ -1,0 +1,298 @@
+{
+  "version": "v1",
+  "unit": "mm",
+  "page": {
+    "widthMm": 120,
+    "heightMm": 80,
+    "margin": {
+      "topMm": 8,
+      "rightMm": 8,
+      "bottomMm": 8,
+      "leftMm": 8
+    }
+  },
+  "styles": {
+    "titulo": {
+      "fontSizePt": 12,
+      "fontWeight": "bold",
+      "color": "#111111"
+    },
+    "meta": {
+      "fontSizePt": 7,
+      "align": "right",
+      "color": "#666666"
+    },
+    "th": {
+      "fontSizePt": 8,
+      "fontWeight": "bold",
+      "backgroundColor": "#EEEEEE",
+      "border": {
+        "widthMm": 0.2,
+        "color": "#000000",
+        "sides": "all"
+      },
+      "padding": {
+        "topMm": 1,
+        "bottomMm": 1,
+        "leftMm": 1,
+        "rightMm": 1
+      }
+    },
+    "td": {
+      "fontSizePt": 8,
+      "overflow": "ellipsis",
+      "maxLines": 1,
+      "border": {
+        "widthMm": 0.2,
+        "sides": "b"
+      },
+      "padding": {
+        "topMm": 1,
+        "bottomMm": 1,
+        "leftMm": 1,
+        "rightMm": 1
+      }
+    },
+    "tdNum": {
+      "fontSizePt": 8,
+      "align": "right",
+      "border": {
+        "widthMm": 0.2,
+        "sides": "b"
+      },
+      "padding": {
+        "topMm": 1,
+        "bottomMm": 1,
+        "leftMm": 1,
+        "rightMm": 1
+      }
+    },
+    "nota": {
+      "fontSizePt": 6.5,
+      "color": "#444444",
+      "padding": {
+        "leftMm": 2
+      }
+    },
+    "rodape": {
+      "fontSizePt": 7
+    }
+  },
+  "sections": {
+    "pageHeader": {
+      "components": [
+        {
+          "type": "text",
+          "styleRef": "meta",
+          "bind": "emitidoEm",
+          "format": {
+            "type": "date",
+            "pattern": "dd/MM/yyyy"
+          },
+          "text": {}
+        },
+        {
+          "type": "line",
+          "line": {
+            "thicknessMm": 0.2
+          }
+        }
+      ]
+    },
+    "reportHeader": {
+      "components": [
+        {
+          "type": "text",
+          "styleRef": "titulo",
+          "bind": "empresa",
+          "format": {
+            "transform": "upper"
+          },
+          "text": {}
+        },
+        {
+          "type": "spacer",
+          "spacer": {
+            "heightMm": 1
+          }
+        }
+      ]
+    },
+    "content": {
+      "components": [
+        {
+          "type": "table",
+          "table": {
+            "dataPath": "itens",
+            "repeatHeader": true,
+            "emptyMessage": "Sem itens.",
+            "columns": [
+              {
+                "key": "nome",
+                "title": "Item",
+                "widthMm": 54,
+                "styleRef": "td"
+              },
+              {
+                "key": "valor",
+                "title": "Valor",
+                "widthMm": 25,
+                "styleRef": "tdNum"
+              },
+              {
+                "key": "situacao",
+                "title": "Situação",
+                "widthMm": 25,
+                "styleRef": "td"
+              }
+            ],
+            "header": {
+              "cells": [
+                {
+                  "value": "Item",
+                  "styleRef": "th"
+                },
+                {
+                  "value": "Valor",
+                  "styleRef": "th"
+                },
+                {
+                  "value": "Situação",
+                  "styleRef": "th"
+                }
+              ]
+            },
+            "row": {
+              "cells": [
+                {
+                  "bind": "nome"
+                },
+                {
+                  "bind": "valor",
+                  "format": {
+                    "type": "number",
+                    "decimals": 2,
+                    "trimZeroDecimals": true
+                  }
+                },
+                {
+                  "bind": "situacao",
+                  "format": {
+                    "nullText": "—"
+                  }
+                }
+              ]
+            },
+            "detail": {
+              "when": {
+                "path": "pendencias",
+                "op": "notEmpty"
+              },
+              "indentMm": 2,
+              "keepWithRow": true,
+              "components": [
+                {
+                  "type": "repeat",
+                  "repeat": {
+                    "dataPath": "pendencias",
+                    "components": [
+                      {
+                        "type": "text",
+                        "styleRef": "nota",
+                        "text": {
+                          "parts": [
+                            {
+                              "value": "· "
+                            },
+                            {
+                              "bind": "codigo"
+                            },
+                            {
+                              "value": ": "
+                            },
+                            {
+                              "bind": "texto"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "summary": {
+      "components": [
+        {
+          "type": "line",
+          "line": {
+            "thicknessMm": 0.2
+          }
+        },
+        {
+          "type": "row",
+          "row": {
+            "gapMm": 2,
+            "columns": [
+              {
+                "weight": 1,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "rodape",
+                    "text": {
+                      "value": "Total"
+                    }
+                  }
+                ]
+              },
+              {
+                "widthMm": 25,
+                "components": [
+                  {
+                    "type": "text",
+                    "styleRef": "tdNum",
+                    "bind": "$.total",
+                    "format": {
+                      "type": "currency",
+                      "currency": "BRL"
+                    },
+                    "text": {}
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "pageFooter": {
+      "components": [
+        {
+          "type": "text",
+          "styleRef": "rodape",
+          "text": {
+            "parts": [
+              {
+                "value": "Página "
+              },
+              {
+                "bind": "@page.number"
+              },
+              {
+                "value": " de "
+              },
+              {
+                "bind": "@page.total"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

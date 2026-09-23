@@ -1,0 +1,36 @@
+/*
+ * Utilitários de superfície: fundo, borda, raio, sombra.
+ */
+.e-bg:where(.ergo, .ergo *) { background: var(--ergo-color-bg); }
+.e-bg-surface:where(.ergo, .ergo *) { background: var(--ergo-color-surface); }
+.e-bg-sunken:where(.ergo, .ergo *) { background: var(--ergo-color-surface-sunken); }
+.e-bg-canvas:where(.ergo, .ergo *) { background: var(--ergo-color-canvas); }
+.e-bg-accent-soft:where(.ergo, .ergo *) { background: var(--ergo-color-accent-soft); }
+
+.e-border:where(.ergo, .ergo *) { border: var(--ergo-border-width) solid var(--ergo-color-border); }
+.e-border-t:where(.ergo, .ergo *) { border-top: var(--ergo-border-width) solid var(--ergo-color-border); }
+.e-border-r:where(.ergo, .ergo *) { border-right: var(--ergo-border-width) solid var(--ergo-color-border); }
+.e-border-b:where(.ergo, .ergo *) { border-bottom: var(--ergo-border-width) solid var(--ergo-color-border); }
+.e-border-l:where(.ergo, .ergo *) { border-left: var(--ergo-border-width) solid var(--ergo-color-border); }
+
+.e-rounded-sm:where(.ergo, .ergo *) { border-radius: var(--ergo-radius-sm); }
+.e-rounded:where(.ergo, .ergo *) { border-radius: var(--ergo-radius-md); }
+.e-rounded-lg:where(.ergo, .ergo *) { border-radius: var(--ergo-radius-lg); }
+.e-rounded-full:where(.ergo, .ergo *) { border-radius: var(--ergo-radius-full); }
+
+.e-shadow-sm:where(.ergo, .ergo *) { box-shadow: var(--ergo-shadow-sm); }
+.e-shadow:where(.ergo, .ergo *) { box-shadow: var(--ergo-shadow-md); }
+.e-shadow-lg:where(.ergo, .ergo *) { box-shadow: var(--ergo-shadow-lg); }
+
+/* Acessibilidade: some da tela, continua para leitor de tela */
+.e-sr-only:where(.ergo, .ergo *) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

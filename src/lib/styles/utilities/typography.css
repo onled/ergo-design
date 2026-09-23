@@ -1,0 +1,44 @@
+/*
+ * Utilitários de tipografia. Os tamanhos são papéis (caption, label, body,
+ * title), não pontos: o editor tem uma hierarquia curta de propósito.
+ */
+.e-text-caption:where(.ergo, .ergo *) { font-size: var(--ergo-text-caption); }
+.e-text-label:where(.ergo, .ergo *) { font-size: var(--ergo-text-label); }
+.e-text-body:where(.ergo, .ergo *) { font-size: var(--ergo-text-body); }
+.e-text-title:where(.ergo, .ergo *) { font-size: var(--ergo-text-title); line-height: var(--ergo-line-height-tight); }
+
+.e-font-regular:where(.ergo, .ergo *) { font-weight: var(--ergo-font-weight-regular); }
+.e-font-medium:where(.ergo, .ergo *) { font-weight: var(--ergo-font-weight-medium); }
+.e-font-semibold:where(.ergo, .ergo *) { font-weight: var(--ergo-font-weight-semibold); }
+
+.e-mono:where(.ergo, .ergo *) { font-family: var(--ergo-font-mono); }
+.e-tabular:where(.ergo, .ergo *) { font-variant-numeric: tabular-nums; }
+
+.e-text-default:where(.ergo, .ergo *) { color: var(--ergo-color-text); }
+.e-text-muted:where(.ergo, .ergo *) { color: var(--ergo-color-text-muted); }
+.e-text-subtle:where(.ergo, .ergo *) { color: var(--ergo-color-text-subtle); }
+.e-text-accent:where(.ergo, .ergo *) { color: var(--ergo-color-accent-text); }
+.e-text-danger:where(.ergo, .ergo *) { color: var(--ergo-color-danger); }
+.e-text-warning:where(.ergo, .ergo *) { color: var(--ergo-color-warning); }
+.e-text-success:where(.ergo, .ergo *) { color: var(--ergo-color-success); }
+
+.e-align-left:where(.ergo, .ergo *) { text-align: left; }
+.e-align-center:where(.ergo, .ergo *) { text-align: center; }
+.e-align-right:where(.ergo, .ergo *) { text-align: right; }
+
+/* Rótulo de seção de painel: "PROPRIEDADES", "ESTRUTURA" */
+.e-eyebrow:where(.ergo, .ergo *) {
+  font-size: var(--ergo-font-size-2xs);
+  font-weight: var(--ergo-font-weight-semibold);
+  letter-spacing: var(--ergo-letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--ergo-color-text-muted);
+}
+
+.e-truncate:where(.ergo, .ergo *) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.e-nowrap:where(.ergo, .ergo *) { white-space: nowrap; }

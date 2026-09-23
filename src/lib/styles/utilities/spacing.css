@@ -1,0 +1,35 @@
+/*
+ * Utilitários de espaçamento. Só os degraus da escala, nunca valor solto: se um
+ * valor não está em primitives.css, ele não existe no editor.
+ */
+.e-p-0:where(.ergo, .ergo *) { padding: 0; }
+.e-p-1:where(.ergo, .ergo *) { padding: var(--ergo-space-1); }
+.e-p-2:where(.ergo, .ergo *) { padding: var(--ergo-space-2); }
+.e-p-3:where(.ergo, .ergo *) { padding: var(--ergo-space-3); }
+.e-p-4:where(.ergo, .ergo *) { padding: var(--ergo-space-4); }
+.e-p-6:where(.ergo, .ergo *) { padding: var(--ergo-space-6); }
+
+.e-px-1:where(.ergo, .ergo *) { padding-inline: var(--ergo-space-1); }
+.e-px-2:where(.ergo, .ergo *) { padding-inline: var(--ergo-space-2); }
+.e-px-3:where(.ergo, .ergo *) { padding-inline: var(--ergo-space-3); }
+.e-px-4:where(.ergo, .ergo *) { padding-inline: var(--ergo-space-4); }
+
+.e-py-1:where(.ergo, .ergo *) { padding-block: var(--ergo-space-1); }
+.e-py-2:where(.ergo, .ergo *) { padding-block: var(--ergo-space-2); }
+.e-py-3:where(.ergo, .ergo *) { padding-block: var(--ergo-space-3); }
+.e-py-4:where(.ergo, .ergo *) { padding-block: var(--ergo-space-4); }
+
+.e-m-0:where(.ergo, .ergo *) { margin: 0; }
+.e-mt-1:where(.ergo, .ergo *) { margin-top: var(--ergo-space-1); }
+.e-mt-2:where(.ergo, .ergo *) { margin-top: var(--ergo-space-2); }
+.e-mt-4:where(.ergo, .ergo *) { margin-top: var(--ergo-space-4); }
+.e-mb-1:where(.ergo, .ergo *) { margin-bottom: var(--ergo-space-1); }
+.e-mb-2:where(.ergo, .ergo *) { margin-bottom: var(--ergo-space-2); }
+.e-mb-4:where(.ergo, .ergo *) { margin-bottom: var(--ergo-space-4); }
+.e-ml-auto:where(.ergo, .ergo *) { margin-left: auto; }
+
+/* Pilha: espaço entre filhos diretos, sem transformar o pai em flex */
+.e-stack-1:where(.ergo, .ergo *) > * + * { margin-top: var(--ergo-space-1); }
+.e-stack-2:where(.ergo, .ergo *) > * + * { margin-top: var(--ergo-space-2); }
+.e-stack-3:where(.ergo, .ergo *) > * + * { margin-top: var(--ergo-space-3); }
+.e-stack-4:where(.ergo, .ergo *) > * + * { margin-top: var(--ergo-space-4); }

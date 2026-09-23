@@ -1,0 +1,173 @@
+/*
+ * Controles compartilhados pelos painéis: botão, campo, rótulo, alternador.
+ * Prefixo ergo- e seletor restrito a .ergo, como os utilitários: o host tem os
+ * dele (PrimeVue) e nenhum dos dois pode vazar para o outro.
+ */
+
+.ergo-btn:where(.ergo, .ergo *) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ergo-space-1);
+  height: var(--ergo-control-height);
+  padding-inline: var(--ergo-space-2);
+  font-size: var(--ergo-text-label);
+  white-space: nowrap;
+  color: var(--ergo-color-text);
+  border: 1px solid var(--ergo-color-border);
+  border-radius: var(--ergo-radius-md);
+  background: var(--ergo-color-surface);
+}
+
+.ergo-btn:where(.ergo, .ergo *):hover:not(:disabled) {
+  background: var(--ergo-color-surface-hover);
+}
+
+.ergo-btn:where(.ergo, .ergo *):disabled {
+  color: var(--ergo-color-text-subtle);
+  cursor: default;
+}
+
+.ergo-btn--icon:where(.ergo, .ergo *) {
+  width: var(--ergo-control-height);
+  padding: 0;
+}
+
+.ergo-btn--ghost:where(.ergo, .ergo *) {
+  border-color: transparent;
+  background: transparent;
+}
+
+.ergo-btn--sm:where(.ergo, .ergo *) {
+  height: 22px;
+  padding-inline: var(--ergo-space-1);
+  font-size: var(--ergo-text-caption);
+}
+
+.ergo-btn--sm.ergo-btn--icon:where(.ergo, .ergo *) {
+  width: 22px;
+}
+
+.ergo-btn--primary:where(.ergo, .ergo *) {
+  color: var(--ergo-color-accent-contrast);
+  border-color: var(--ergo-color-accent);
+  background: var(--ergo-color-accent);
+}
+
+.ergo-btn--primary:where(.ergo, .ergo *):hover:not(:disabled) {
+  background: var(--ergo-color-accent-hover);
+}
+
+.ergo-btn--danger:where(.ergo, .ergo *) {
+  color: var(--ergo-color-danger);
+  border-color: currentColor;
+  background: var(--ergo-color-danger-soft);
+}
+
+.ergo-btn--warning:where(.ergo, .ergo *) {
+  color: var(--ergo-color-warning);
+  border-color: currentColor;
+  background: var(--ergo-color-warning-soft);
+}
+
+.ergo-btn--on:where(.ergo, .ergo *) {
+  color: var(--ergo-color-accent-text);
+  border-color: var(--ergo-color-accent);
+  background: var(--ergo-color-accent-soft);
+}
+
+:is(.ergo-btn, .ergo-input, .ergo-check):where(.ergo, .ergo *):focus-visible {
+  outline: 2px solid var(--ergo-color-focus-ring);
+  outline-offset: 1px;
+}
+
+.ergo-input:where(.ergo, .ergo *) {
+  width: 100%;
+  min-width: 0;
+  height: var(--ergo-control-height);
+  padding-inline: var(--ergo-space-2);
+  font-size: var(--ergo-text-label);
+  color: var(--ergo-color-text);
+  border: 1px solid var(--ergo-color-border);
+  border-radius: var(--ergo-radius-md);
+  background: var(--ergo-color-surface-sunken);
+}
+
+.ergo-input:where(.ergo, .ergo *):hover {
+  border-color: var(--ergo-color-border-strong);
+}
+
+.ergo-input:where(.ergo, .ergo *)::placeholder {
+  color: var(--ergo-color-text-subtle);
+}
+
+textarea.ergo-input:where(.ergo, .ergo *) {
+  height: auto;
+  min-height: 56px;
+  padding-block: var(--ergo-space-1);
+  resize: vertical;
+}
+
+.ergo-input--mono:where(.ergo, .ergo *) {
+  font-family: var(--ergo-font-mono);
+  font-size: var(--ergo-text-caption);
+}
+
+.ergo-field:where(.ergo, .ergo *) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ergo-space-1);
+  min-width: 0;
+}
+
+.ergo-field__label:where(.ergo, .ergo *) {
+  font-size: var(--ergo-text-caption);
+  color: var(--ergo-color-text-muted);
+}
+
+.ergo-field__hint:where(.ergo, .ergo *) {
+  font-size: var(--ergo-text-caption);
+  color: var(--ergo-color-text-subtle);
+}
+
+.ergo-check:where(.ergo, .ergo *) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ergo-space-2);
+  font-size: var(--ergo-text-label);
+  cursor: pointer;
+}
+
+.ergo-check:where(.ergo, .ergo *) input {
+  accent-color: var(--ergo-color-accent);
+}
+
+.ergo-segmented:where(.ergo, .ergo *) {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--ergo-color-border);
+  border-radius: var(--ergo-radius-md);
+  background: var(--ergo-color-surface-sunken);
+}
+
+.ergo-segmented:where(.ergo, .ergo *) button {
+  height: 22px;
+  padding-inline: var(--ergo-space-2);
+  font-size: var(--ergo-text-caption);
+  border-radius: var(--ergo-radius-sm);
+  color: var(--ergo-color-text-muted);
+}
+
+.ergo-segmented:where(.ergo, .ergo *) button[aria-pressed='true'] {
+  color: var(--ergo-color-text);
+  background: var(--ergo-color-surface);
+  box-shadow: var(--ergo-shadow-sm);
+}
+
+.ergo-section-title:where(.ergo, .ergo *) {
+  font-size: var(--ergo-font-size-2xs);
+  font-weight: var(--ergo-font-weight-semibold);
+  letter-spacing: var(--ergo-letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--ergo-color-text-muted);
+}
