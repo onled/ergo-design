@@ -1,7 +1,6 @@
-# ergo design
+# Ergo design
 
-Editor visual de impressos para o motor de relatórios [ergo](../ergo). Um projeto,
-duas entregas:
+Editor visual de impressos para o motor de relatórios [ergo](https://github.com/onled/ergo).
 
 | entrega | o que é | build |
 |---|---|---|
